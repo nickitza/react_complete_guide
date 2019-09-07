@@ -2,16 +2,17 @@ import React, {Component} from 'react';
 import './App.css';
 import Person from './Person/Person'
 
-class App extends Component () {
+class App extends Component {
   state = {
     persons: [
-      {name:"Nicki", age:33},
-      {name:"Eric", age:34},
-      {name:"Sarah", age: 8}
+      { name: "Nicki", age: 33 },
+      { name: "Eric", age: 34 },
+      { name: "Sarah", age: 8 }
     ],
     otherState: 'something else',
     showPersons: false
   }
+
   togglePersonsHandler = () => {
 
   }
@@ -32,13 +33,16 @@ class App extends Component () {
         Switch Name
       </button>
       <div>
-        <Person name={this.state.persons[0].name} age={this.state.persons[0].age}></Person>
-        <Person name={this.state.persons[1].name} age={this.state.persons[1].age}></Person>
-        <Person name={this.state.persons[2].name} age={this.state.persons[2].age}></Person>
-
-
+        <Person 
+          name={this.state.persons[0].name} 
+          age={this.state.persons[0].age}/>
+        <Person 
+          name={this.state.persons[1].name} 
+          age={this.state.persons[1].age}>Hobby: Napping</Person>
+        <Person 
+          name={this.state.persons[2].name} 
+          age={this.state.persons[2].age}/>
       </div>
-
     </div>
     );
   }
