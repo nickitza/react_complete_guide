@@ -14,8 +14,10 @@ class App extends Component {
   }
 
   togglePersonsHandler = () => {
-
+    const toggled = this.state.showPersons;
+    this.setState({showPersons: !toggled})
   }
+
   render(){
     const style = {
       backgroundColor: 'white',
@@ -28,10 +30,12 @@ class App extends Component {
       <div className="App">
       <button
         style={style}
+        //show or hide person components
         onClick={this.togglePersonsHandler}
         >
-        Switch Name
+        Show People
       </button>
+      {this.state.showPersons ? 
       <div>
         <Person 
           name={this.state.persons[0].name} 
@@ -43,6 +47,9 @@ class App extends Component {
           name={this.state.persons[2].name} 
           age={this.state.persons[2].age}/>
       </div>
+      :
+        null
+      }
     </div>
     );
   }
