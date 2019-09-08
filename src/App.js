@@ -5,10 +5,10 @@ import Person from './Person/Person'
 class App extends Component {
   state = {
     persons: [
-      { name: "Nicki", age: 33 },
-      { name: "Eric", age: 34 },
-      { name: "Sarah", age: 8 },
-      { name: "Spike", age: 31}
+      {id: 1, name: "Nicki", age: 33 },
+      {id: 2, name: "Eric", age: 34 },
+      {id: 3, name: "Sarah", age: 8 },
+      {id: 4, name: "Spike", age: 31}
     ],
     otherState: 'something else',
     showPersons: false
@@ -20,7 +20,8 @@ class App extends Component {
   }
 
   deletePersonHandler = (index) => {
-    const persons = this.state.persons
+    //this is a new array, not a reference to the original persons array
+    const persons = [...this.state.persons]
     persons.splice(index, 1)
     this.setState({persons: persons})
   }
@@ -39,10 +40,11 @@ class App extends Component {
       persons = (
         <div>
           {this.state.persons.map((person, index) => {
-            return <Person 
+            return <Person
+              key = { person.id }
               click={()=>this.deletePersonHandler(index)} 
-              name={person.name} 
-              age={person.age}/>
+              name={ person.name } 
+              age={ person.age }/>
           })}
         </div>
       )
