@@ -27,6 +27,29 @@ class App extends Component {
     this.setState({persons: persons})
   }
 
+  nameChangedHandler = (event, id) => {
+    //find element in array and get index of that element
+    //takes function as input and executes it on every element in array (like map)
+    //returns a boolean if it's the el we're looking for
+    const personIndex = this.state.persons.findIndex(p =>{
+      return p.id === id;
+    });
+    //objects and arrays are reference types
+    //create new object, spread new object so as to not mutate the original state array
+    const person = {
+      ...this.state.persons[personIndex]
+    }
+    //changing the name of the particular person to the value in the input to the copied array
+    person.name = event.target.value;
+    //copy of old array
+    const persons = [...this.state.persons]
+    //updated person into copy of array
+    persons[personIndex] = person
+    //finally can update state
+    this.setState( { persons: persons } )
+
+  }
+
   render(){
     const buttonStyle = {
       backgroundColor: 'white',
@@ -45,7 +68,8 @@ class App extends Component {
               key = { person.id }
               click={()=>this.deletePersonHandler(index)} 
               name={ person.name } 
-              age={ person.age }/>
+              age={ person.age }
+              changed={(event) => this.nameChangedHandler(event, person.id)}/>
           })}
         </div>
       )
