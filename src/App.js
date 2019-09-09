@@ -28,11 +28,11 @@ class App extends Component {
   }
 
   render(){
-    const style = {
+    const buttonStyle = {
       backgroundColor: 'white',
       font: 'inherit',
-      border: '1px solid purple',
-      padding: '8px',
+      border: '1px solid orange',
+      padding: '10px',
       cursor: 'pointer'
     }
 
@@ -53,7 +53,7 @@ class App extends Component {
     return (
       <div className="App">
       <button
-        style={style}
+        style={buttonStyle}
         //show or hide person components
         onClick={this.togglePersonsHandler}
         >
