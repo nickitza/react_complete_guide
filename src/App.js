@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import './App.css';
 import Person from './Person/Person'
+import Radium from 'radium'
 
 
 class App extends Component {
@@ -84,8 +85,6 @@ class App extends Component {
     if(this.state.persons.length <=1){
       classes.push('bold')
     } 
-
-
 
     return (
       <div className="App">
