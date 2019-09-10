@@ -58,7 +58,10 @@ class App extends Component {
       padding: '10px',
       borderRadius: '8px',
       cursor: 'pointer',
-      color: "white"
+      color: "white",
+      ':hover' : {
+        backgroundColor: 'lightgreen',
+      }
     }
 
     let persons = null;
@@ -76,6 +79,9 @@ class App extends Component {
         </div>
       )
       buttonStyle.backgroundColor = 'coral'
+      buttonStyle[':hover'] = {
+        backgroundColor: 'red',
+      }
     }
 
     let classes = [];
@@ -103,5 +109,5 @@ class App extends Component {
     );
   }
 }
-
-export default App;
+//higher order component
+export default Radium(App);
