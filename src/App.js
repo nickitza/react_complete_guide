@@ -52,11 +52,11 @@ class App extends Component {
 
   render(){
     const buttonStyle = {
-      backgroundColor: 'white',
+      backgroundColor: 'green',
       font: 'inherit',
-      border: '1px solid orange',
       padding: '10px',
-      cursor: 'pointer'
+      cursor: 'pointer',
+      color: "white"
     }
 
     let persons = null;
@@ -73,6 +73,7 @@ class App extends Component {
           })}
         </div>
       )
+      buttonStyle.backgroundColor = 'red'
     }
     return (
       <div className="App">
@@ -81,7 +82,7 @@ class App extends Component {
         //show or hide person components
         onClick={this.togglePersonsHandler}
         >
-        Show People
+        Toggle Persons
       </button>
       {persons}
       
