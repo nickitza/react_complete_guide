@@ -52,9 +52,10 @@ class App extends Component {
 
   render(){
     const buttonStyle = {
-      backgroundColor: 'green',
+      backgroundColor: 'teal',
       font: 'inherit',
       padding: '10px',
+      borderRadius: '8px',
       cursor: 'pointer',
       color: "white"
     }
@@ -73,7 +74,7 @@ class App extends Component {
           })}
         </div>
       )
-      buttonStyle.backgroundColor = 'red'
+      buttonStyle.backgroundColor = 'coral'
     }
 
     let classes = [];
