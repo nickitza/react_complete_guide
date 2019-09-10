@@ -75,8 +75,20 @@ class App extends Component {
       )
       buttonStyle.backgroundColor = 'red'
     }
+
+    let classes = [];
+    if(this.state.persons.length <= 2){
+      classes.push('coral');
+    }
+    if(this.state.persons.length <=1){
+      classes.push('bold')
+    } 
+
+
+
     return (
       <div className="App">
+        <h2 className={classes.join(' ')}>Hello! This is the Persons App!</h2>
       <button
         style={buttonStyle}
         //show or hide person components
