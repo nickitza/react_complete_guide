@@ -1,0 +1,26 @@
+.coral {
+  color: coral;
+}
+
+.bold {
+  font-size: 2em;
+  font-weight: bold;
+}
+
+.Cockpit button {
+  background-color: teal;
+  font: inherit;
+  color: white;
+  padding: 15px;
+  cursor: pointer;
+}
+  .Cockpit button:hover {
+    background-color: lightgreen;
+  }
+
+.Cockpit button.coral{
+  background-color: coral;
+}
+  .Cockpit button.coral:hover{
+    background-color: salmon;
+  }
