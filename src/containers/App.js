@@ -18,7 +18,8 @@ class App extends Component {
       {id: 4, name: "Spike", age: 31}
     ],
     otherState: 'something else',
-    showPersons: false
+    showPersons: false,
+    changeCounter: 0
   }
 
   static getDerivedStateFromProps(props, state){
@@ -57,7 +58,7 @@ class App extends Component {
     //updated person into copy of array
     persons[personIndex] = person
     //finally can update state
-    this.setState( { persons: persons } )
+    this.setState( { persons: persons, changeCounter: this.state.changeCounter+1 } )
 
   }
 

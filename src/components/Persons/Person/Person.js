@@ -2,6 +2,7 @@ import React from 'react'
 import Aux from '../../../hoc/Aux'
 import withClass from '../../../hoc/withClass'
 import classes from './Person.css'
+import PropTypes from 'prop-types'
 
 
 const Person = ( props ) => {
