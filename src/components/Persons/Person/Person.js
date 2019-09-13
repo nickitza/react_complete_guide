@@ -14,5 +14,12 @@ const Person = ( props ) => {
     </Aux>
     )
 }
+// propTypes is a special property added to js object that React will watch out for in dev mode
+Person.propTypes = {
+  click: PropTypes.func,
+  name: PropTypes.string,
+  age: PropTypes.number,
+  changed: PropTypes.func
+}
 
 export default withClass(Person, classes.Person)
